@@ -1,11 +1,8 @@
 package com.example.factory.beans.car;
 
 
-import lombok.NonNull;
-
 public interface Car {
-    Boolean inStock = true;
+    void postConstruct();
 
-    public void postConstruct();
-
+    void preDestroy();
 }

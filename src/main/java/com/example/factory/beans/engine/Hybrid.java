@@ -1,24 +1,27 @@
 package com.example.factory.beans.engine;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Hybrid implements Engine{
 
     Integer power;
-    Boolean isEnabled = false;
+    boolean enabled = false;
 
     public Hybrid() {
         power = 300;
     }
 
     public void start() {
-        isEnabled = true;
+        enabled = true;
     }
 
     public void stop() {
-        isEnabled = false;
+        enabled = false;
     }
 
-    public boolean getIsEnabled(){
-        return isEnabled;
+    public boolean getEnabled() {
+        return enabled;
     }
 
     public int getPower(){

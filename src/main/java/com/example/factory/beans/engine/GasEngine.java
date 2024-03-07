@@ -1,30 +1,27 @@
 package com.example.factory.beans.engine;
 
-import lombok.Getter;
-import lombok.NonNull;
 import org.springframework.stereotype.Component;
 
-@Getter
 @Component
 public class GasEngine implements Engine{
 
     Integer power;
-    Boolean isEnabled = false;
+    boolean enabled = false;
 
     public GasEngine() {
         power = 250;
     }
 
     public void start() {
-        isEnabled = true;
+        enabled = true;
     }
 
     public void stop() {
-        isEnabled = false;
+        enabled = false;
     }
 
-    public boolean getIsEnabled(){
-        return isEnabled;
+    public boolean getEnabled() {
+        return enabled;
     }
 
     public int getPower(){

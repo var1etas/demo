@@ -3,27 +3,30 @@ package com.example.factory.beans.car;
 import com.example.factory.beans.engine.Engine;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
+import lombok.AccessLevel;
+import lombok.experimental.FieldDefaults;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
+@Log4j2
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class GasolineCar implements Car {
 
     @Autowired
-    @Qualifier(value = "gasEngine")
-    private Engine engine;
+    Engine gasEngine;
 
     @PostConstruct
     public void postConstruct() {
-        engine.start();
-        System.out.printf("Engine in car enabled: %s%n", engine.getIsEnabled());
-        System.out.println(engine.getPower());
+        gasEngine.start();
+        log.info("Engine in car enabled: {}", gasEngine.getEnabled());
+        log.info(gasEngine.getPower());
     }
 
     @PreDestroy
     public void preDestroy(){
-        engine.stop();
-        System.out.printf("Engine in car enabled: %s%n", engine.getIsEnabled());
+        gasEngine.stop();
+        log.info("Engine in car enabled: {}", gasEngine.getEnabled());
     }
 }

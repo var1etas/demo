@@ -1,12 +1,11 @@
 package com.example.factory.beans.engine;
 
 public interface Engine {
+    void start();
 
-    public void start();
+    void stop();
 
-    public void stop();
+    int getPower();
 
-    public boolean getIsEnabled();
-
-    public int getPower();
+    boolean getEnabled();
 }

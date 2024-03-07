@@ -1,16 +1,13 @@
 package com.example.factory.config;
 
-
 import com.example.factory.beans.engine.ElectricEngine;
 import com.example.factory.beans.engine.Engine;
 import com.example.factory.beans.engine.GasEngine;
 import com.example.factory.beans.engine.Hybrid;
-import lombok.extern.log4j.Log4j2;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
-@Configuration
-@Log4j2
+@Component
 public class AssemblerConfig {
 
     @Bean
