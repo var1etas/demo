@@ -5,7 +5,7 @@ public interface Engine {
 
     void stop();
 
-    int getPower();
+    Integer getPower();
 
-    boolean getEnabled();
+    boolean isEnabled();
 }

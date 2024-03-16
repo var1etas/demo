@@ -7,7 +7,6 @@ import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -25,13 +24,13 @@ public class HybridCar implements Car{
     @PostConstruct
     public void postConstruct() {
         engine.start();
-        log.info("Engine in car enabled: {}", engine.getEnabled());
-        log.info(engine.getPower());
+        log.info("Engine in car enabled: {}", engine.isEnabled());
+        log.info("Power: {}", engine.getPower());
     }
 
     @PreDestroy
     public void preDestroy(){
         engine.stop();
-        log.info("Engine in car enabled: {}", engine.getEnabled());
+        log.info("Engine in car enabled: {}", engine.isEnabled());
     }
 }

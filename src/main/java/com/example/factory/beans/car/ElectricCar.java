@@ -7,7 +7,6 @@ import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -21,13 +20,13 @@ public class ElectricCar implements Car{
     @PostConstruct
     public void postConstruct() {
         electricEngine.start();
-        log.info("Engine in car enabled: {}", electricEngine.getEnabled());
-        log.info(electricEngine.getPower());
+        log.info("Engine in car enabled: {}", electricEngine.isEnabled());
+        log.info("Power: {}", electricEngine.getPower());
     }
 
     @PreDestroy
     public void preDestroy(){
         electricEngine.stop();
-        log.info("Engine in car enabled: {}", electricEngine.getEnabled());
+        log.info("Engine in car enabled: {}", electricEngine.isEnabled());
     }
 }

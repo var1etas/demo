@@ -1,8 +1,13 @@
 package com.example.factory.beans.engine;
 
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Component;
 
 @Component
+@Getter
+@FieldDefaults(level = AccessLevel.PUBLIC)
 public class Hybrid implements Engine{
 
     Integer power;
@@ -18,13 +23,5 @@ public class Hybrid implements Engine{
 
     public void stop() {
         enabled = false;
-    }
-
-    public boolean getEnabled() {
-        return enabled;
-    }
-
-    public int getPower(){
-        return power;
     }
 }

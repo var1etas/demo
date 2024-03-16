@@ -20,13 +20,13 @@ public class GasolineCar implements Car {
     @PostConstruct
     public void postConstruct() {
         gasEngine.start();
-        log.info("Engine in car enabled: {}", gasEngine.getEnabled());
-        log.info(gasEngine.getPower());
+        log.info("Engine in car enabled: {}", gasEngine.isEnabled());
+        log.info("Power: {}", gasEngine.getPower());
     }
 
     @PreDestroy
     public void preDestroy(){
         gasEngine.stop();
-        log.info("Engine in car enabled: {}", gasEngine.getEnabled());
+        log.info("Engine in car enabled: {}", gasEngine.isEnabled());
     }
 }
