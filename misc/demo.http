@@ -1,0 +1,24 @@
+### return all request's headers
+GET http://localhost:8080/api/car/v1/head
+
+### json controller
+POST http://localhost:8080/api/car/v1/jsonOrder
+Content-Type: application/json
+
+{
+  "price": 125.0,
+  "info": {
+    "date": "2022-01-01"
+  }
+}
+
+### error 502
+GET http://localhost:8080/api/car/v1/jsonOrder
+Content-Type: application/json
+
+{
+  "price": 125.0,
+  "info": {
+    "date": "2022-01-01"
+  }
+}
