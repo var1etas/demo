@@ -1,0 +1,34 @@
+###
+POST http://localhost:8080/api/car/v1/order
+Content-Type: application/json
+
+{
+  "composition": "hybrid, toyota"
+}
+
+
+### return all request's headers
+GET http://localhost:8080/api/car/v1/head
+
+### json controller
+POST http://localhost:8080/api/car/v1/jsonOrder
+Content-Type: application/json
+
+{
+  "price": 125.0,
+  "info": {
+    "date": "2022-01-01"
+  }
+}
+
+### Get order by id
+GET http://localhost:8080/api/car/v1/order/{{orderId}}
+
+### Get all orders
+GET http://localhost:8080/api/car/v1/order
+
+### Delete order
+DELETE http://localhost:8080/api/car/v1/order/{{orderId}}
+
+### Delete order
+PUT http://localhost:8080/api/car/v1/order/{{orderId}}
