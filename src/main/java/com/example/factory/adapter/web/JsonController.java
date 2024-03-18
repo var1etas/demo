@@ -20,7 +20,7 @@ public class JsonController {
 
     @PostMapping("/jsonOrder")
     public @ResponseBody Map<String, Object> getJsonOrder(@RequestBody Map<String, Object> jsonOrder){
-        Long orderId = new Random().nextLong();
+        Long orderId = Math.abs(new Random().nextLong());
         Map date = (Map)jsonOrder.get("info");
         jsonOrder.remove("info");
         Map<String, Object> info = new LinkedHashMap<>();
