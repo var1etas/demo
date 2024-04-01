@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: DevApplication
+    property:
+      - devProp1
+      - devProp2
+      - devProp3
+    env: ${EXAMPLE_TEST:default}
+
