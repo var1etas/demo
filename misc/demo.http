@@ -1,17 +1,17 @@
-### Person
-POST http://localhost:8080/api/dto/person
+### Post todolist
+POST http://localhost:8090/event/add
 Content-Type: application/json
 
 {
-  "name": "Alex",
-  "email": "sdjksd@gmail.com"
+  "name": "Мой список дел2",
+  "events": [
+    "дело1",
+    "delo2",
+    "delo3"
+  ]
 }
 
-### Person with error
-POST http://localhost:8080/api/dto/person
-Content-Type: application/json
 
-{
-  "name": "A",
-  "email": "sdjksdgmail.com"
-}
+
+### Post todolist
+GET http://localhost:8090/event/get
