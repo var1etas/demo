@@ -2,7 +2,7 @@ package com.example.factory.service;
 
 import com.example.factory.model.dto.EventsDto;
 import com.example.factory.repository.EventsListRepository;
-import com.example.factory.service.mapper.EventsConverter;
+import com.example.factory.service.converter.EventsConverter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

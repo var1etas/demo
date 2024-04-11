@@ -1,4 +1,4 @@
-package com.example.factory.service.mapper;
+package com.example.factory.service.converter;
 
 import com.example.factory.model.dto.EventsDto;
 import com.example.factory.model.entity.EventsEntity;
