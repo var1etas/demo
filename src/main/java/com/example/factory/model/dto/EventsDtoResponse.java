@@ -1,14 +1,10 @@
 package com.example.factory.model.dto;
 
-
 import jakarta.validation.constraints.NotBlank;
-import lombok.Setter;
 
 import java.util.List;
 
-public record EventsDto(
-        @NotBlank
+public record EventsDtoResponse(
         String name,
-        @NotBlank
         List<String> events) {
 }

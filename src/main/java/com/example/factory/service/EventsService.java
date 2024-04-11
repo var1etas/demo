@@ -1,6 +1,7 @@
 package com.example.factory.service;
 
-import com.example.factory.model.dto.EventsDto;
+import com.example.factory.model.dto.EventsDtoRequest;
+import com.example.factory.model.dto.EventsDtoResponse;
 import com.example.factory.repository.EventsListRepository;
 import com.example.factory.service.converter.EventsConverter;
 import lombok.RequiredArgsConstructor;
@@ -16,11 +17,11 @@ public class EventsService {
 
     private final EventsConverter eventsConverter;
 
-    public void save(EventsDto eventsDto) {
-        eventsListRepository.save(eventsConverter.dtoToEntity(eventsDto));
+    public void save(EventsDtoRequest eventsDtoRequest) {
+        eventsListRepository.save(eventsConverter.dtoToEntity(eventsDtoRequest));
     }
 
-    public List<EventsDto> get() {
+    public List<EventsDtoResponse> get() {
         return eventsConverter.entityToDto(eventsListRepository.findAll());
     }
 

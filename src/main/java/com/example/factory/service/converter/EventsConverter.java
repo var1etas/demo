@@ -1,6 +1,7 @@
 package com.example.factory.service.converter;
 
-import com.example.factory.model.dto.EventsDto;
+import com.example.factory.model.dto.EventsDtoRequest;
+import com.example.factory.model.dto.EventsDtoResponse;
 import com.example.factory.model.entity.EventsEntity;
 import com.example.factory.model.entity.EventsListEntity;
 import org.springframework.stereotype.Component;
@@ -27,19 +28,19 @@ public class EventsConverter {
         return eventsEntities;
     }
 
-    public List<EventsDto> entityToDto(Iterable<EventsListEntity> event) {
-        List<EventsDto> dtoList = new ArrayList<>();
+    public List<EventsDtoResponse> entityToDto(Iterable<EventsListEntity> event) {
+        List<EventsDtoResponse> dtoList = new ArrayList<>();
         event.forEach(x -> {
-            EventsDto dto = new EventsDto(x.getName(), entityToString(x.getEvents()));
+            EventsDtoResponse dto = new EventsDtoResponse(x.getName(), entityToString(x.getEvents()));
             dtoList.add(dto);
         });
         return dtoList;
     }
 
-    public EventsListEntity dtoToEntity(EventsDto eventsDto) {
+    public EventsListEntity dtoToEntity(EventsDtoRequest eventsDtoRequest) {
         EventsListEntity listEntity = new EventsListEntity();
-        listEntity.setName(eventsDto.name());
-        listEntity.setEvents(stringToEntity(eventsDto.events()));
+        listEntity.setName(eventsDtoRequest.name());
+        listEntity.setEvents(stringToEntity(eventsDtoRequest.events()));
         return listEntity;
     }
 }
