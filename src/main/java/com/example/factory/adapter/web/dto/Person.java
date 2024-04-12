@@ -5,6 +5,11 @@ import com.example.factory.adapter.web.validation.NameConstraint;
 
 public record Person(
         @NameConstraint String name,
-        @EmailConstraint String email
+        @EmailConstraint String email,
+        String message
 ) {
+    public Person {
+        if (message == null) message = name + ", your data is correct";
+    }
+
 }

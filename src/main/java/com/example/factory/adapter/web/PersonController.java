@@ -16,6 +16,6 @@ public class PersonController {
 
     @PostMapping("/person")
     public @ResponseBody String checkPerson(@Valid @RequestBody Person person) {
-        return person.name() + ", your data is correct";
+        return person.message();
     }
 }

@@ -15,3 +15,12 @@ Content-Type: application/json
   "name": "A",
   "email": "sdjksdgmail.com"
 }
+
+### Person with error
+PATCH http://localhost:8080/api/dto/person
+Content-Type: application/json
+
+{
+  "name": "A",
+  "email": "sdjksdgmail.com"
+}
