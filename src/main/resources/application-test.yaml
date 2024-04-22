@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: TestApplication
+    property:
+      - testProp1
+      - testProp2
+      - testProp3
+    env: ${EXAMPLE_TEST:test}

@@ -1,0 +1,17 @@
+### Person
+POST http://localhost:8080/api/dto/person
+Content-Type: application/json
+
+{
+  "name": "Alex",
+  "email": "sdjksd@gmail.com"
+}
+
+### Person with error
+POST http://localhost:8080/api/dto/person
+Content-Type: application/json
+
+{
+  "name": "A",
+  "email": "sdjksdgmail.com"
+}

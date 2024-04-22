@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: ProdApplication
+    property:
+      - prodProp1
+      - prodProp2
+      - prodProp3
+    env: ${EXAMPLE_TEST:default}
