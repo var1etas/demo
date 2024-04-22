@@ -1,17 +1,31 @@
-### Post todolist
-POST http://localhost:8090/event/add
+###
+POST http://localhost:8090/api/user/register
 Content-Type: application/json
 
 {
-  "name": "Мой список дел2",
-  "events": [
-    "дело1",
-    "delo2",
-    "delo3"
+  "login": "alex",
+  "password": "1234",
+  "roles": [
+    "ROLE_ADMIN"
   ]
 }
 
 
+###
+GET http://localhost:8090/api/admin/info
+Content-Type: application/json
 
-### Post todolist
-GET http://localhost:8090/event/get
+{
+  "username": "alex",
+  "password": "1234"
+}
+
+
+###
+GET http://localhost:8090/api/support/info
+Content-Type: application/json
+
+{
+  "login": "alex",
+  "password": "1234"
+}
