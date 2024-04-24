@@ -22,18 +22,15 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
-    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-aop'
     implementation 'org.mapstruct:mapstruct:1.5.2.Final'
     implementation 'org.springframework.boot:spring-boot-starter-web-services'
-    implementation 'org.springframework.boot:spring-boot-starter-oauth2-authorization-server'
-    implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+	implementation 'org.springframework:spring-tx:'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.security:spring-security-test'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
 }
