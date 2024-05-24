@@ -1,0 +1,17 @@
+### Post todolist
+POST http://localhost:8090/event/add
+Content-Type: application/json
+
+{
+  "name": "Мой список дел2",
+  "events": [
+    "дело1",
+    "delo2",
+    "delo3"
+  ]
+}
+
+
+
+### Post todolist
+GET http://localhost:8090/event/get
