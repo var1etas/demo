@@ -1,0 +1,11 @@
+###
+GET http://localhost:8090/api/event/sync
+
+###
+GET http://localhost:8090/api/event/async
+
+###
+GET http://localhost:8090/api/event/transactional
+
+###
+GET http://localhost:8090/api/event/unhandledTransaction
