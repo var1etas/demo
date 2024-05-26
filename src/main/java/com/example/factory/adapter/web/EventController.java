@@ -30,4 +30,8 @@ public class EventController {
         publisher.publishTransactionalEvent();
     }
 
+    @RequestMapping("/unhandledTransaction")
+    public void publishUnhandledTransactionEvent() {
+        publisher.publishUnhandledTransactionalEvent();
+    }
 }

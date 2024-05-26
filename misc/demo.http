@@ -1,31 +1,11 @@
 ###
-POST http://localhost:8090/api/user/register
-Content-Type: application/json
-
-{
-  "login": "alex",
-  "password": "1234",
-  "roles": [
-    "ROLE_ADMIN"
-  ]
-}
-
+GET http://localhost:8090/api/event/sync
 
 ###
-GET http://localhost:8090/api/admin/info
-Content-Type: application/json
-
-{
-  "username": "alex",
-  "password": "1234"
-}
-
+GET http://localhost:8090/api/event/async
 
 ###
-GET http://localhost:8090/api/support/info
-Content-Type: application/json
+GET http://localhost:8090/api/event/transactional
 
-{
-  "login": "alex",
-  "password": "1234"
-}
+###
+GET http://localhost:8090/api/event/unhandledTransaction

@@ -32,5 +32,4 @@ public class EventsListener {
     public void transactionalEventListener(TransactionalEvent event) {
         log.info("Transactional event processed");
     }
-
 }
