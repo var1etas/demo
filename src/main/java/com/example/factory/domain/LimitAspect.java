@@ -7,6 +7,8 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 @Aspect
 @Log4j2
 @Component
@@ -14,13 +16,13 @@ import org.springframework.stereotype.Component;
 public class LimitAspect {
 
     private final APIConfig apiConfig;
-    int count = 0;
+
+    AtomicInteger count = new AtomicInteger(0);
 
     @Before("@annotation(com.example.factory.domain.Limited)")
     public void requestLimit() {
-        count++;
         log.info("Requests from one user: " + count);
-        if (count > apiConfig.getLimit()) {
+        if (count.incrementAndGet() > apiConfig.getLimit()) {
             throw new RuntimeException("Too many requests");
         }
     }
